@@ -1,0 +1,3 @@
+<widget>
+	Event location
+</widget>

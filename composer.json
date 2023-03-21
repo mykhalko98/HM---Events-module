@@ -1,0 +1,30 @@
+{
+    "name": "hubmachine/events",
+    "description": "",
+    "authors": [
+        {
+            "name": "hubmachine",
+            "email": "mail@hubmachine.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Events\\Providers\\EventsServiceProvider",
+                "Modules\\Events\\Providers\\EventServiceProvider",
+                "Modules\\Events\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Events\\": ""
+        },
+        "files": [
+            "Modules/Events/helpers.php"
+        ]
+    }
+}

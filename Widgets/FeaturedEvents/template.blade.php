@@ -1,0 +1,3 @@
+<widget>
+	Featured events
+</widget>

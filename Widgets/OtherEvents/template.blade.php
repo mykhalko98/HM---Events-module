@@ -1,0 +1,3 @@
+<widget>
+	Other events
+</widget>

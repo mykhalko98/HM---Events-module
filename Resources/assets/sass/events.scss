@@ -1,0 +1,759 @@
+@import 'asset-path.scss';
+@import "~bootstrap/scss/_mixins";
+
+$border-radius-xl: 15px;
+body {
+    position: relative;
+}
+.tribute-container {
+    border-radius: map-get($spacers, 2);
+}
+/* events-wrapper-thumbnail-image */
+.events-wrapper-thumbnail-image a,
+.events-wrapper-thumbnail-image img,
+.events-wrapper-thumbnail-image {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* categories */
+[widget-name="event_categories"],
+[widget-name="event_tags"] {
+    margin-bottom: 10px;
+    .badge-primary {
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #3779D9;
+        border-radius: 50px;
+        background: #D7E7FF;
+    }
+    .bootstrap-select,
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+        width: auto;
+        max-width: 200px;
+        border: none;
+    }
+    .bootstrap-select {
+        > .dropdown-menu {
+            min-width: 200px;
+        }
+        .dropdown-toggle {
+            padding: 10px;
+            color: #6c757d;
+            border: 1px dashed #6c757d;
+            border-radius: 50px;
+            background: none;
+            &::after {
+                display: none;
+            }
+        }
+        .text {
+            white-space: pre-wrap;
+        }
+    }
+}
+/* widget-name="event_author" */
+[widget-name="event_author"] {
+    border-top: 1px solid #6c757d;
+    .event-author-row {
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .event-author-image {
+        width: 50px;
+        height: 50px;
+    }
+    .event-author-name {
+        margin-top: 3px;
+    }
+    .event-author-date {
+        color: map-get($colors, "gray");
+    }
+}
+
+/* events_event_author */
+[widget-name="events_event_author"] {
+    margin: 20px 0 10px;
+    .name {
+        color: $black;
+    }
+    .event-author-date {
+        color: map-get($colors, "gray");
+        font-size: 13px;
+    }
+}
+
+
+[widget-name="event_url"] {
+    .page-url {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        word-break: break-all;
+        margin-bottom: 15px;
+        .col, .col-auto {
+            margin: 0;
+            padding: 0;
+            icon-image {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+/* events_list_events and events_other_events */
+[widget-name="events_list_events"],
+[widget-name="events_myevents"],
+[widget-name="events_featured_events"],
+[widget-name="events_other_events"] {
+    .card {
+        align-items: stretch;
+        margin-bottom: map-get($spacers, 4);
+        border-radius: $border-radius-xl;
+        background: map-get($grays, "100");
+        &:after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 0px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px 2px map-get($theme-colors, "dark");
+            transition: all .3s linear;
+            z-index: -1;
+        }
+    }
+    .card-link {
+        display: block;
+        margin-bottom: map-get($spacers, 2);
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            padding: map-get($spacers, 2);
+            text-transform: uppercase;
+        }
+        .badge.right {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            left: auto;
+            z-index: 2;
+            padding: map-get($spacers, 2);
+            text-transform: uppercase;
+        }
+    }
+    .bd-placeholder-img {
+        border-radius: $border-radius-xl $border-radius-xl 0 0;
+        object-fit: cover;
+    }
+    .badge-white {
+        color: $link-color;
+    }
+    .badge-light {
+        margin-right: 5px;
+        padding: 0;
+        color: $link-color;
+        text-transform: uppercase;
+        background: none;
+    }
+    .card-tags {
+        
+    }
+    .card-body {
+        padding: 20px 35px 30px;
+    }
+    .card-date {
+        margin-bottom: map-get($spacers, 2);
+        font-weight: $font-weight-bold;
+        color: map-get($theme-colors, "black");
+    }
+    .card-title, .card-title a  {
+        margin-bottom: map-get($spacers, 2);
+        color: map-get($theme-colors, "black");
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+    }
+    .card-text {
+        margin-bottom: map-get($spacers, 3);
+        color: map-get($theme-colors, "dark");
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .card-location, .card-location a {
+        font-size: $small-font-size;
+        color: map-get($colors, "gray");        
+    }
+}
+
+:root {
+  /* Not my favorite that line-height has to be united, but needed */
+  --lh: 1.5rem;
+}
+    
+html {
+  line-height: var(--lh);
+}
+
+/* widget-name="events_event_cover" */
+[widget-name="events_event_cover"] {
+    min-height: 250px;
+    margin-bottom: 20px;
+    background: map-get($colors, "gray");
+    .wcm-image {
+        border-radius: $border-radius-xl;
+    }
+    [page-editable="true"] &,
+    [save-widgets-url] & {
+        [data-edit-type="cover-media"] {
+            background: map-get($colors, "gray");
+        }
+    }
+}
+
+/* widget-name="events_event_dates" */
+[widget-name="events_event_dates"] {
+    .event-dates-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 10px;
+        .left {
+            color: map-get($colors, "gray");
+            margin-right: 10px;
+        }
+        .divider {
+            margin: 0 5px;
+        }
+    }
+}
+
+.loading {
+    .icon-basket-remove {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+[widget-name="events_event_tickets"]  {
+    ul .nav-item .btn-primary:not(:disabled):not(:disabled) {
+        font-weight: $font-weight-bold;
+        border-color: #434242;
+        background-color: #434242;
+        opacity: .75;
+        &.active {
+            opacity: 1;
+        }
+    }
+    .nav-item {
+        margin-bottom: 8px;
+    }
+}
+[id*="page_events-event"] {
+    &:not([page-editable="true"]) {
+        [widget-name="events_event_tickets"]  {
+            .desription {
+                display: flex;
+                flex-wrap: nowrap;
+                margin: 12px 0;
+                
+                icon-image {
+                    color:#999;
+                }
+            }
+            p {
+                margin-bottom: 0;
+            }
+            .input-group {
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                margin-bottom: 16px;
+            }
+            .square-group {
+                flex: 0 0 84px;
+                padding: 19px 18px;
+                border-radius: 5px;
+                background-color: #fff;
+                &.active {
+                    border: 1px solid #1565C0;
+                }
+            }
+            .item-title {
+                line-height: 21.6px;
+                font-size: 18px;
+                color: $black;
+            }
+            .item-price {
+                line-height: 16.8px;
+                font-size: 14px;
+                color: #434242;
+            }
+            .item-date {
+                color: #999;
+                font-size: 10px;
+            }
+            .faded {
+                opacity: .5;
+            }
+        }
+    }
+}
+
+
+
+
+// widget-name="events_event_dates"
+[widget-name="events_event_dates"] .input-group > input.form-control,
+[widget-name="events_event_tickets"] ul.nav .nav-item .nav-link,
+[widget-name="events_event_tickets"] ul.nav .nav-item .btn,
+[widget-name="events_event_tickets"] .input-group:not(.has-validation) > .form-control,
+[widget-name="events_event_tickets"] .input-group > .form-control,
+[widget-name="events_event_location"] .input-group > input.form-control,
+[widget-name="events_event_tickets"] .input-group > textarea.form-control {
+    // border-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+/* [widget-name="events_event_tickets"] */
+[widget-name="events_event_tickets"] {
+    .event-tickets-row {
+        display: block;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 10px;
+        .left {
+            color: map-get($colors, "gray");
+            margin-right: 10px;
+        }
+    }
+
+    #ticket_early_price_expiry {
+        input {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        icon-image {
+            font-size: 15px;
+            color: #6c757d;
+        }
+    }
+    .date-hidden {
+        position: absolute;
+        left: 0;
+        width: 16px;
+        opacity: 0;
+    } 
+}
+
+/* [widget-name="events_event_location"] */
+[widget-name="events_event_location"] {
+    .event-location-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .left {
+            color: map-get($colors, "gray");
+            margin-right: 10px;
+        }
+    }
+}
+
+/* event page page_events-event */
+#page_events-event, #page_events-event-dashboard {
+    aside.aside > .inner > .row > [widget-name="events_event_admin_actions"] {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: right;
+        background: none;
+    }
+    aside.aside > .inner > .row > [widget-name="events_event_dates"] {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    aside.aside > .inner > .row > [widget-name="events_event_tickets"] {
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-radius: 0;
+    }
+    aside.aside > .inner > .row > [widget-name="events_event_location"] {
+        padding-top: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+/* events_dashboard_title */
+[widget-name="events_dashboard_title"] {
+    .dashboard-title {
+        .btn-back {
+            padding-left: 0;
+            color: $link-color;
+            font-size: 17px;
+            [data-icon] {
+                font-size: 40px;
+                margin-right: -5px;
+            }
+        }
+        .inner {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .event-link-img {
+            margin-bottom: 10px;
+        }
+        .img-fluid {
+            max-width: 100px;
+        }
+        .img-fluid-200 {
+            max-width: 200px;
+        }
+        .page-title {            
+            order: 3;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 15px;
+            font-weight: $font-weight-bold;
+            a {
+                color: $black;
+            }
+        }
+        .dropdown-options {
+            margin-left: auto;
+        }
+    }
+}
+
+/* widget-name="events_dashboard_tickets" */
+[widget-name="events_dashboard_tickets"] {
+    .items {
+        .item {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: $table-border-width solid $table-border-color;
+            &:last-child {
+                border-bottom-color: transparent;
+            }
+            .badge {
+                text-transform: uppercase;
+                padding: 5px 10px;
+                border-radius: 50px;
+            }
+            > div {
+                flex: 0 0 100%;
+                margin: 3px 0;
+                &:first-child {
+                    flex: 0 0 100%;
+                }
+                &:last-child {
+                    flex: 0 0 auto;
+                }
+            }
+        }
+    }
+    .item-user {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        > a {
+            min-width: 50px;
+        }
+        .info {
+            padding-left: 10px;
+        }
+        .name {
+            font-weight: $font-weight-bold;
+            color: $black;
+            word-break: break-word;
+        }
+        .date, .date a {
+            color: $gray-400;
+        }
+    }
+}
+
+[widget-name="events_mytickets"] {
+    .items {
+        .item {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: $table-border-width solid $table-border-color;
+            &:last-child {
+                border-bottom-color: transparent;
+                padding-bottom: 0;
+            }
+            .badge {
+                text-transform: uppercase;
+                padding: 5px 10px;
+                border-radius: 50px;
+            }
+            > div {                
+                flex: 0 0 100%;
+                padding-top: 10px;
+                &:first-child {
+                    flex: 0 0 100%;
+                    padding-top: 0;
+                    text-align: left;
+                }
+                &:last-child {
+                    flex: 0 0 auto;
+                }
+            }
+        }
+    }
+    .card-link {
+        position: relative;
+        display: block;
+        margin-bottom: map-get($spacers, 2);
+        min-width: 240px;
+        width: 240px;
+        transition: opacity .3s linear;
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            padding: map-get($spacers, 2);
+            text-transform: uppercase;
+        }
+        &:hover {
+            opacity: 0.8;
+            transition: opacity .3s linear;
+        }
+    }
+    .item-event {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        .img-fluid {
+            border-radius: 5px;
+        }
+        > a {
+            
+        }
+        .info {
+            padding: 5px 0 0 0;
+        }
+        .title {
+            color: $body-color;
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: $font-weight-bold;
+            word-break: break-word;
+        }
+        .date, .date a {
+            font-size: 16px;
+            color: $body-color;
+            font-weight: $font-weight-bold;
+        }
+        .location, .location a {
+            font-size: 16px;
+            color: map-get($colors, "gray");
+        }
+    }
+    .item-order {
+        font-weight: $font-weight-bold;
+    }
+    .items.refunded-tickets.custom-border-top {
+        border-top: $table-border-width solid $table-border-color;
+        margin-top: 32px;
+        padding-top: 32px;
+    }
+}
+
+[widget-name="events_bought_tickets"],
+#modal-ticket-order-refund-confirmation {
+    .item > div {
+        display: inline-flex;
+        float: left;
+    }
+    .item .item-user a {
+        display: contents;
+    }
+    .item .item-user .info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .items.refunded-tickets {
+        margin-top: 32px;
+        border-top: $table-border-width solid $table-border-color;
+    }
+}
+
+#modal-ticket-order-refund-confirmation blockquote {
+    color: #555555;
+    padding:1.2em 30px 1.2em 20px;
+    border-left:8px solid #78C0A8;
+    position: relative;
+    background:#EDEDED;
+}
+
+@include media-breakpoint-up(md) {
+    [widget-name="events_dashboard_title"] {
+        .dashboard-title {
+            .inner {
+                flex-wrap: nowrap;
+                align-items: center;
+            }            
+            .event-link-img {
+                width: auto;
+                margin-bottom: 0;
+            }
+            .page-title {
+                order: inherit;
+                margin-top: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+    [widget-name="events_mytickets"] {
+        .items {
+            .item {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                overflow: auto;
+                > div {                
+                    flex: 0 0 15%;
+                    padding-top: 10px;
+                    text-align: right;
+                    &:first-child {
+                        flex: 0 0 50%;
+                        padding-top: 0;
+                        text-align: left;
+                    }
+                    &:last-child {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+        }
+        .item-event {
+            .info {
+                padding: 10px 0 0 0;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    [widget-name="events_dashboard_tickets"] {
+        .items {
+            .item {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                overflow: auto;
+                > div {                
+                    flex: 0 0 15%;
+                    padding-top: 10px;
+                    text-align: right;
+                    &:first-child {
+                        flex: 0 0 50%;
+                        padding-top: 0;
+                        text-align: left;
+                    }
+                    &:last-child {
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+        }
+    }
+    /* [widget-name="events_dashboard_tickets"] {
+        .item-event {
+            flex-direction: row;
+            .info {
+                padding-left: 30px;
+            }
+        } 
+    } */
+    [widget-name="events_mytickets"] {
+        .item-event {
+            flex-direction: row;
+            .info {
+                padding-left: 30px;
+            }
+        } 
+    }
+}
+
+@include media-breakpoint-down(md) {
+    [widget-name="events_list_events"],
+    [widget-name="events_featured_events"],
+    [widget-name="events_other_events"] {
+        .post-author-row {
+            flex-wrap: nowrap;
+            [class^="col"] {
+                flex: 0 0 auto;
+                + .col {
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    max-width: 100%;
+                    margin-left: 10px;
+                }
+            }
+        } 
+    }
+    #page_events-event {
+        padding-bottom: map-get($spacers, 3)*12;
+    }
+}
+
+
+@media all and (max-width: 1191px) {
+    [id*="page_blogs-blogs-post-format"] {
+        padding-bottom: 132px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    [id*="page_blogs-blogs-post-format"] {
+        padding-bottom: 196px;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .widget-cover-media {
+        .wcm-form {
+            width: 100%;
+        }
+    }
+}

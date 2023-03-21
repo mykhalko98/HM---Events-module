@@ -1,0 +1,1 @@
+<a href="{{ route('events.event.dashboard', [$event->link]) }}" class="btn btn-light rounded-pill float-right">{{ __('Dashboard') }}</a>

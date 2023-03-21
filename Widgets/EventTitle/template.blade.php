@@ -1,0 +1,3 @@
+<widget>
+	Events title
+</widget>

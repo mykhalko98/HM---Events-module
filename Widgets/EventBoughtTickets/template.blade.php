@@ -1,0 +1,3 @@
+<widget>
+	Bought tickets
+</widget>

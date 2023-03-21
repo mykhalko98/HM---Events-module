@@ -1,0 +1,1 @@
+<widget>Event tags</widget>

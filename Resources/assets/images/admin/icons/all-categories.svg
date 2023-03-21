@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="6" width="46" height="36" rx="3" stroke="white" stroke-width="2"/>
+<rect x="21.5" y="14.5" width="5" height="2" rx="1" stroke="white"/>
+<rect x="28.5" y="14.5" width="5" height="2" rx="1" stroke="white"/>
+<rect x="35.5" y="14.5" width="5" height="2" rx="1" stroke="white"/>
+<rect x="14.5" y="14.5" width="5" height="2" rx="1" stroke="white"/>
+<rect x="7.5" y="14.5" width="5" height="2" rx="1" stroke="white"/>
+<rect x="15.75" y="19.75" width="16.5" height="10.5" rx="1.25" stroke="white" stroke-width="1.5"/>
+<path d="M18.5 23C18.7761 23 19 22.7761 19 22.5C19 22.2239 18.7761 22 18.5 22C18.2239 22 18 22.2239 18 22.5C18 22.7761 18.2239 23 18.5 23Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30.3 29.8L23.623 23L15.9 29.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32.1 28L27.3107 23L25.8 24.3333" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24 37H16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 34H16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 37L31 37" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29 37L28 37" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
